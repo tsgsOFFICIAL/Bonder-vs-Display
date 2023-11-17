@@ -48,6 +48,8 @@ function updateView(logHistoryJson) {
     const latestEntries = Object.values(groupedByStableId).map(findLatestEntry);
 
     latestEntries.forEach(obj => {
+        controlValues(obj);
+
         const logTimeDate = new Date(obj.logTime);
 
         // Get the current time
@@ -124,4 +126,26 @@ function updateView(logHistoryJson) {
 
         main.appendChild(article);
     });
+}
+
+function controlValues(obj) {
+    let title = "";
+    let body = "";
+
+    if (obj.outsideTemperature > 20) {
+        title = "Det for varmt";
+        body = "Det er ved at være for varmt, du bør sænke temperaturen";
+    }
+
+    if (obj.uvIndex > 50) {
+        title = "Solen smelter din hjerne";
+        body = "Dit ansigt smelter snart ved solens kraft!";
+    }
+
+    if (obj.waterLevelPercentage < 25) {
+        title = "Der er ikke mere vand";
+        body = "Dine stakkels grise har ikke mere vand";
+    }
+
+    sendNotification("", "");
 }
