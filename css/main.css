@@ -52,6 +52,7 @@ body {
     justify-content: space-between;
     line-height: 1.4;
     gap: 3.2rem;
+    padding: 1rem;
 }
 
 /* Remove all link styling */
