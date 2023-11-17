@@ -1,0 +1,210 @@
+@import url("variables.css");
+
+/* Remove all margins and paddings & Remove blue highlight on mobile & Change the default font-family & color */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "WorkSans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroller-color) rgba(0, 0, 0, .3);
+}
+
+    *::selection {
+        background: hsla(195, 77%, 44%, 1);
+    }
+
+    *::placeholder {
+        color: inherit;
+    }
+
+    *::-webkit-scrollbar {
+        width: .8em;
+    }
+
+    *::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--scroller-color);
+    }
+/* Set font-size to 62.5% so 0.1rem = 1 px */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* Stretch to fill the entire page */
+html, body {
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+/* Display flex */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.4;
+    gap: 3.2rem;
+}
+
+/* Remove all link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s;
+    cursor: pointer;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+    a.button, button {
+        background-color: var(--secondary-color);
+        border: 0.2rem solid var(--secondary-color);
+        border-radius: 3rem;
+        color: #FFF;
+        padding: 1.7rem 3.5rem;
+        box-shadow: 0 .4rem .5rem 0 rgb(255 57 70 / 15%);
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+        a.button:hover, button:hover {
+            background-color: #FFF;
+            color: var(--secondary-color);
+            transition: all .3s ease;
+        }
+
+        button:disabled {
+            background-color: #fff;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: default;
+        }
+
+/* Remove style from lists */
+ul, ol {
+    list-style: none;
+}
+
+
+
+/* Commom classes */
+
+*.noscroll {
+    overflow: hidden;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+/* Make anything unselectable */
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+.active {
+    color: var(--secondary-color);
+    text-decoration: none;
+    background-image: linear-gradient(90deg, var(--underline-color), var(--underline-color));
+    background-size: 100% .2rem;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+    .underline.gradient {
+        text-decoration: none;
+        background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        background-size: 100% .2rem;
+        background-repeat: no-repeat;
+        background-position: 0% 100%;
+    }
+
+    .underline.hover {
+        text-decoration: none;
+        background-image: linear-gradient(90deg, var(--underline-color), var(--underline-color));
+        background-size: 0% .2rem;
+        background-repeat: no-repeat;
+        background-position: 0% 100%;
+        transition: background-size .3s ease;
+    }
+
+    .underline.gradient.hover {
+        text-decoration: none;
+        background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        background-size: 0% .2rem;
+        background-repeat: no-repeat;
+        background-position: 0% 100%;
+        transition: background-size .3s ease;
+    }
+
+    .underline.hover.from-right {
+        background-position: 100% 100%;
+    }
+
+    .underline.hover.from-middle {
+        background-position: 50% 100%;
+    }
+
+    .underline.hover:hover {
+        background-size: 100% .2rem;
+    }
+
+.overflow-dots {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.invalid {
+    color: var(--fail-color);
+    pointer-events: none;
+}
+
+.rotating {
+    animation: rotating 3s linear infinite;
+}
+
+.form-invalid {
+    color: var(--fail-color);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row.nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-col.nowrap {
+    flex-wrap: nowrap;
+}

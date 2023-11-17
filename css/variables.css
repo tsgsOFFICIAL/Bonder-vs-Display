@@ -1,0 +1,21 @@
+:root {
+    --text-color: #FFF;
+    --underline-color: var(--secondary-color);
+    --primary-color: hsl(226, 49%, 46%);
+    --secondary-color: hsl(192, 100%, 40%);
+    --background-color: #0D1117;
+    --fail-color: hsla(0, 95%, 56%, 1);
+    --success-color: hsla(206, 100%, 40%, 1);
+    --box-shadow-color: rgba(30, 32, 33, 0.12);
+    --bnt-hover-color: #FFF;
+    --card-background: #161B22;
+    --input-background: hsl(210, 24%, 25%);
+    --footer-background: rgb(22, 27, 34);
+    --scroller-color: var(--secondary-color);
+    --unlocked-color: #ff2f32;
+    --locked-color: #5fadbf;
+    --closed-menu-symbol: '\02C5';
+    --menu-background-color: hsl(199, 24%, 29%);
+    --menu-hover-color: hsl(199, 24%, 35%);
+    --table-border-color: var(--secondary-color);
+}
