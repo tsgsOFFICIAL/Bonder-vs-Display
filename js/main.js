@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchData() {
-    const options = {
-        method: 'GET'
-    };
+    // const options = {
+    //     method: 'GET'
+    // };
 
-    fetch('http://192.168.0.50/api/HillBilly/Get/All', options)
-        .then(response => response.json())
-        .then(response => updateView(response))
-        .catch(err => console.error(err));
+    // fetch('http://192.168.0.50/api/HillBilly/Get/All', options)
+    //     .then(response => response.json())
+    //     .then(response => updateView(response))
+    // .catch(err => console.error(err));
 }
 
 function updateView(logHistoryJson) {
