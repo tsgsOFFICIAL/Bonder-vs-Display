@@ -59,5 +59,11 @@
         <footer>
             <h2>&copy; 2023 - 2023 <a href="/" target="_self">BonderøvsFirma</a>, All Rights Reserved.</h2>
         </footer>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js', { scope: './' });
+            }
+        </script>
     </body>
 </html>
