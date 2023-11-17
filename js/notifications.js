@@ -6,9 +6,9 @@ Notification.requestPermission().then((result) => {
 
 function randomNotification() {
     const randomItem = Math.floor(Math.random() * games.length);
-    const notifTitle = games[randomItem].name;
-    const notifBody = `Created by ${games[randomItem].author}.`;
-    const notifImg = `data/img/${games[randomItem].slug}.jpg`;
+    const notifTitle = games[randomItem];
+    const notifBody = `Created by tsgsOFFICIAL.`;
+    const notifImg = `./assets/icons/128x128.png`;
     const options = {
         body: notifBody,
         icon: notifImg,
