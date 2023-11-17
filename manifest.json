@@ -5,8 +5,8 @@
     "background_color": "#353535",
     "display": "standalone",
     "orientation": "portrait",
-    "scope": "/VanvidsBillisterne-PWA",
-    "start_url": "https://tsgsofficial.github.io/VanvidsBillisterne-PWA/",
+    "scope": "/Bonder-vs-Display",
+    "start_url": "https://tsgsOFFICIAL.github.io/Bonder-vs-Display/",
     "icons": [
         {
             "src": "assets/icons/icon-48x48.png",
