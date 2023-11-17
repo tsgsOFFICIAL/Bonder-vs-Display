@@ -8,13 +8,13 @@ async function topLevelFunction() {
 
 const sendNotification = async () => {
     if (Notification.permission === 'granted') {
-        showNotification(notification.value);
+        showNotification('RandomShit pt 2');
     } else {
         if (Notification.permission !== 'denied') {
             const permission = await Notification.requestPermission();
             
             if (permission === 'granted') {
-                showNotification(notification.value);
+                showNotification('RandomShit pt 2');
             }
         }
     }
@@ -30,8 +30,7 @@ const showNotification = (notifyBody, notifyImg = `./assets/icons/128x128.png`) 
     
     if ('showNotification' in registration) {
         registration.showNotification(notifyTitle, payload);
-    }
-    else {
+    } else {
         new Notification(notifyTitle, payload);
     }
 };
