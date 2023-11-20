@@ -27,7 +27,7 @@
                 registration = await navigator.serviceWorker.getRegistration();
             }
 
-            const sendNotification = async (notifyTitle, notifyBody) => {
+            async function sendNotification(notifyTitle, notifyBody) {
                 if (Notification.permission === 'granted') {
                     showNotification(notifyTitle, notifyBody);
                 } else {
@@ -39,9 +39,9 @@
                         }
                     }
                 }
-            };
+            }
 
-            const showNotification = (notifyTitle, notifyBody) => {
+            function showNotification(notifyTitle, notifyBody) {
                 const notifyImg = `./assets/icons/128x128.png`;
 
                 const payload = {
@@ -54,7 +54,7 @@
                 } else {
                     new Notification(notifyTitle, payload);
                 }
-            };
+            }
         </script>
         <script type="text/javascript" src="./js/cookie.js" defer></script>
         <script type="text/javascript" src="./js/main.js" defer></script>
