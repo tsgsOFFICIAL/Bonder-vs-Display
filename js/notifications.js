@@ -34,7 +34,3 @@ const showNotification = (notifyTitle, notifyBody) => {
         new Notification(notifyTitle, payload);
     }
 };
-
-setInterval(() => {
-    sendNotification("Bonderøvs Besked", "Sut den so!");
-}, 30 * 1000);
