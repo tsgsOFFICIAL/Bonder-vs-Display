@@ -135,27 +135,27 @@ function updateView(logHistoryJson) {
 function controlValues(obj) {
     let title = "";
     let body = "";
-    let sendNotification = false;
+    let sendANotification = false;
 
     if (obj.outsideTemperature > 20) {
         title = "Det for varmt";
         body = "Det er ved at være for varmt, du bør sænke temperaturen";
-        sendNotification = true;
+        sendANotification = true;
     }
 
     if (obj.uvIndex > 50) {
         title = "Solen smelter din hjerne";
         body = "Dit ansigt smelter snart ved solens kraft!";
-        sendNotification = true;
+        sendANotification = true;
     }
 
     if (obj.waterLevelPercentage < 25) {
         title = "Der er ikke mere vand";
         body = "Dine stakkels grise har ikke mere vand";
-        sendNotification = true;
+        sendANotification = true;
     }
 
-    if (sendNotification) {
+    if (sendANotification) {
         sendNotification(title, body);
     }
 }
