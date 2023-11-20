@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(() => {
         fetchData();
-    }, 10 * 1000);
+    }, 60 * 1000);
 });
 
 function fetchData() {
