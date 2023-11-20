@@ -1,3 +1,7 @@
+let registration;
+
+topLevelFunction();
+
 document.addEventListener("DOMContentLoaded", function () {
     fetchData();
 
@@ -153,5 +157,38 @@ function controlValues(obj) {
 
     if (sendNotification) {
         sendNotification(title, body);
+    }
+}
+
+async function topLevelFunction() {
+    registration = await navigator.serviceWorker.getRegistration();
+}
+
+async function sendNotification(notifyTitle, notifyBody) {
+    if (Notification.permission === 'granted') {
+        showNotification(notifyTitle, notifyBody);
+    } else {
+        if (Notification.permission !== 'denied') {
+            const permission = await Notification.requestPermission();
+
+            if (permission === 'granted') {
+                showNotification(notifyTitle, notifyBody);
+            }
+        }
+    }
+}
+
+function showNotification(notifyTitle, notifyBody) {
+    const notifyImg = `./assets/icons/128x128.png`;
+
+    const payload = {
+        body: notifyBody,
+        icon: notifyImg,
+    };
+
+    if ('showNotification' in registration) {
+        registration.showNotification(notifyTitle, payload);
+    } else {
+        new Notification(notifyTitle, payload);
     }
 }
