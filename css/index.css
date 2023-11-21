@@ -40,7 +40,7 @@ main {
     color: inherit;
 }
 
-.stable-container > section.header {
+.stable-container>section.header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -48,7 +48,7 @@ main {
     color: inherit;
 }
 
-.stable-container > section.info {
+.stable-container>section.info {
     height: 100%;
     width: 100%;
     gap: .69rem;
@@ -59,7 +59,7 @@ main {
     font-size: 1.69rem;
 }
 
-.stable-container > section * {
+.stable-container>section * {
     color: inherit;
 }
 
@@ -76,4 +76,34 @@ main {
     width: 100%;
     text-align: left;
     color: inherit;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 750px) {
+
+    /* Change flow direction to vertical */
+    .stable-container {
+        width: 40vw;
+        justify-content: space-between;
+    }
+
+    .stable-container>section.header {
+        align-items: flex-start;
+    }
+
+    .stable-container h2 {
+        font-size: 2rem;
+    }
+
+    .stable-container .time-text {
+        font-size: 1.2rem;
+    }
+
+    .stable-container ol li {
+        font-size: 1.2rem;
+    }
+
+    .stable-container>section.info {
+        height: auto;
+    }
 }

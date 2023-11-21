@@ -2,7 +2,7 @@ let registration;
 
 topLevelFunction();
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 
     setInterval(() => {
@@ -69,7 +69,7 @@ function updateView(logHistoryJson) {
         article.className = "stable-container";
 
         let headerSection = document.createElement("section");
-        headerSection.className = "header flex-row nowrap";
+        headerSection.className = "header flex-col nowrap";
 
         let text = document.createElement("h2");
         text.innerText = `Stald ${obj.stableId}`;
