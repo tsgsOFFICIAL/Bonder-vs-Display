@@ -51,85 +51,92 @@ function updateView(logHistoryJson) {
     // Use Array.map() to find the latest entry in each array
     const latestEntries = Object.values(groupedByStableId).map(findLatestEntry);
 
-    latestEntries.forEach(obj => {
-        controlValues(obj);
+    if (latestEntries.length > 0) {
+        latestEntries.forEach(obj => {
+            controlValues(obj);
 
-        const logTimeDate = new Date(obj.logTime);
+            const logTimeDate = new Date(obj.logTime);
 
-        // Get the current time
-        const currentTime = new Date();
+            // Get the current time
+            const currentTime = new Date();
 
-        // Calculate the time difference in milliseconds
-        const timeDifference = currentTime - logTimeDate;
+            // Calculate the time difference in milliseconds
+            const timeDifference = currentTime - logTimeDate;
 
-        // Convert the time difference to minutes
-        const minutesAgo = Math.floor(timeDifference / (1000 * 60));
+            // Convert the time difference to minutes
+            const minutesAgo = Math.floor(timeDifference / (1000 * 60));
 
-        let article = document.createElement("article");
-        article.className = "stable-container";
+            let article = document.createElement("article");
+            article.className = "stable-container";
 
-        let headerSection = document.createElement("section");
-        headerSection.className = "header flex-col nowrap";
+            let headerSection = document.createElement("section");
+            headerSection.className = "header flex-col nowrap";
 
-        let text = document.createElement("h2");
-        text.innerText = `Stald ${obj.stableId}`;
+            let text = document.createElement("h2");
+            text.innerText = `Stald ${obj.stableId}`;
 
-        headerSection.appendChild(text);
+            headerSection.appendChild(text);
 
-        text = document.createElement("p");
-        text.id = `stable-${obj.stableId}-info`;
-        text.className = "time-text";
-        text.innerText = `Data is ${minutesAgo} minutes old`;
+            text = document.createElement("p");
+            text.id = `stable-${obj.stableId}-info`;
+            text.className = "time-text";
+            text.innerText = `Data is ${minutesAgo} minutes old`;
 
-        headerSection.appendChild(text);
+            headerSection.appendChild(text);
 
-        article.appendChild(headerSection);
+            article.appendChild(headerSection);
 
-        let infoSection = document.createElement("section");
-        infoSection.className = "info flex-row nowrap";
+            let infoSection = document.createElement("section");
+            infoSection.className = "info flex-row nowrap";
 
-        let ol = document.createElement("ol");
+            let ol = document.createElement("ol");
 
-        let li = document.createElement("li");
-        li.innerText = "Temperatur Celcius:";
+            let li = document.createElement("li");
+            li.innerText = "Temperatur Celcius:";
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        li = document.createElement("li");
-        li.innerText = "UV Index:";
+            li = document.createElement("li");
+            li.innerText = "UV Index:";
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        li = document.createElement("li");
-        li.innerText = "Water Level:";
+            li = document.createElement("li");
+            li.innerText = "Water Level:";
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        infoSection.appendChild(ol);
+            infoSection.appendChild(ol);
 
-        ol = document.createElement("ol");
+            ol = document.createElement("ol");
 
-        li = document.createElement("li");
-        li.innerText = `${obj.outsideTemperature}`;
+            li = document.createElement("li");
+            li.innerText = `${obj.outsideTemperature}`;
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        li = document.createElement("li");
-        li.innerText = `${obj.uvIndex}`;
+            li = document.createElement("li");
+            li.innerText = `${obj.uvIndex}`;
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        li = document.createElement("li");
-        li.innerText = `${obj.waterLevelPercentage}`;
+            li = document.createElement("li");
+            li.innerText = `${obj.waterLevelPercentage}`;
 
-        ol.appendChild(li);
+            ol.appendChild(li);
 
-        infoSection.appendChild(ol);
+            infoSection.appendChild(ol);
 
-        article.appendChild(infoSection);
+            article.appendChild(infoSection);
 
-        main.appendChild(article);
-    });
+            main.appendChild(article);
+        });
+    } else {
+        let emptyElement = document.createElement("h2");
+        emptyElement.innerText = "No data found!";
+
+        main.appendChild(emptyElement);
+    }
 }
 
 function controlValues(obj) {
