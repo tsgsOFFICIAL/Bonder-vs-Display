@@ -140,6 +140,7 @@ function updateView(logHistoryJson) {
 }
 
 function controlValues(obj) {
+    console.log(obj);
     let title = "";
     let body = "";
     let sendANotification = false;
