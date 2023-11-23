@@ -140,25 +140,24 @@ function updateView(logHistoryJson) {
 }
 
 function controlValues(obj) {
-    console.log(obj);
     let title = "";
     let body = "";
     let sendANotification = false;
 
     if (obj.outsideTemperature > 20) {
-        title = "Det for varmt";
+        title = "Det for varmt i stald " + obj.stableId;
         body = "Det er ved at være for varmt, du bør sænke temperaturen";
         sendANotification = true;
     }
 
     if (obj.uvIndex > 50) {
-        title = "Solen smelter din hjerne";
+        title = "Solen smelter din hjerne i stald " + obj.stableId;
         body = "Dit ansigt smelter snart ved solens kraft!";
         sendANotification = true;
     }
 
     if (obj.waterLevelPercentage < 25) {
-        title = "Der er ikke mere vand";
+        title = "Der er ikke mere vand i stald " + obj.stableId;
         body = "Dine stakkels grise har ikke mere vand";
         sendANotification = true;
     }
