@@ -92,7 +92,7 @@ function updateView(logHistoryJson) {
             let ol = document.createElement("ol");
 
             let li = document.createElement("li");
-            li.innerText = "Temperatur Celcius:";
+            li.innerText = "Temperatur:";
 
             ol.appendChild(li);
 
@@ -111,7 +111,7 @@ function updateView(logHistoryJson) {
             ol = document.createElement("ol");
 
             li = document.createElement("li");
-            li.innerText = `${obj.outsideTemperature}`;
+            li.innerHTML = `${obj.outsideTemperature}&deg;`;
 
             ol.appendChild(li);
 
