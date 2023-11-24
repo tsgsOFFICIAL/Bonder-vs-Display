@@ -144,13 +144,13 @@ function controlValues(obj) {
     let body = "";
     let sendANotification = false;
 
-    if (obj.outsideTemperature > 20) {
+    if (obj.outsideTemperature > 25) {
         title = "Det for varmt i stald " + obj.stableId;
         body = "Det er ved at være for varmt, du bør sænke temperaturen";
         sendANotification = true;
     }
 
-    if (obj.uvIndex > 50) {
+    if (obj.uvIndex > 100) {
         title = "Solen smelter din hjerne i stald " + obj.stableId;
         body = "Dit ansigt smelter snart ved solens kraft!";
         sendANotification = true;
