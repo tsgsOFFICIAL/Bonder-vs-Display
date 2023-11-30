@@ -73,7 +73,7 @@ function updateView(logHistoryJson) {
             headerSection.className = "header flex-col nowrap";
 
             let text = document.createElement("h2");
-            text.innerText = `Stald ${obj.stableId}`;
+            text.innerText = `Stable ${obj.stableId}`;
 
             headerSection.appendChild(text);
 
@@ -92,7 +92,7 @@ function updateView(logHistoryJson) {
             let ol = document.createElement("ol");
 
             let li = document.createElement("li");
-            li.innerText = "Temperatur:";
+            li.innerText = "Temperature:";
 
             ol.appendChild(li);
 
@@ -145,20 +145,20 @@ function controlValues(obj) {
     let sendANotification = false;
 
     if (obj.outsideTemperature > 25) {
-        title = "Det for varmt i stald " + obj.stableId;
-        body = "Det er ved at være for varmt, du bør sænke temperaturen";
+        title = "Its too hit in stable " + obj.stableId;
+        body = "Its getting too hot in here, you should do something about it.";
         sendANotification = true;
     }
 
     if (obj.uvIndex > 100) {
-        title = "Solen smelter din hjerne i stald " + obj.stableId;
-        body = "Dit ansigt smelter snart ved solens kraft!";
+        title = "The sun is melting your brain in stable " + obj.stableId;
+        body = "You're pigs are turning into bacon, just by being in there.. Fix it!";
         sendANotification = true;
     }
 
     if (obj.waterLevelPercentage < 25) {
-        title = "Der er ikke mere vand i stald " + obj.stableId;
-        body = "Dine stakkels grise har ikke mere vand";
+        title = "No more water in stable " + obj.stableId;
+        body = "Your poor pigs, they are thirsty!";
         sendANotification = true;
     }
 
