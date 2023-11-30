@@ -80,7 +80,7 @@ function updateView(logHistoryJson) {
             text = document.createElement("p");
             text.id = `stable-${obj.stableId}-info`;
             text.className = "time-text";
-            text.innerText = `Data is ${minutesAgo} minutes old`;
+            text.innerText = `Data is ${minutesAgo > 60 ? "hella" : "minutes"} old`;
 
             headerSection.appendChild(text);
 
